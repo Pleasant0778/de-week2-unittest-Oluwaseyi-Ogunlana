@@ -39,25 +39,25 @@ This project uses **pytest** to verify system behavior across multiple physiolog
 ---
 
 ### Test Cases Summary
+ 
+**Glucose increases after a meal** - Feed the system a meal and verify if the glucose_level rises. 
 
-| Test | Description |
-|------|--------------|
-**Glucose increases after a meal**  Feed the system a meal and verify if the glucose_level rises. 
- **Glucose decreases after exercise**  Simulate exercise and ensure glucose_level drops. |
-| **Correct action is returned** | 
+ **Glucose decreases after exercise** - Simulate exercise and ensure glucose_level drops. 
+
+**Correct action is returned** - check if the predict_action has the correct return value for different cases 
 - High glucose → "deliver_insulin"
 - Low glucose → "warn_low_glucose"
 - Normal range → "maintain"  
 
 
-**Glucose never drops below minimum** After long exercise, ensure glucose_level is not below 50 mg/dL 
+**Glucose never drops below minimum** - After long exercise, ensure glucose_level is not below 50 (the threshold set for the project)
 
 
-**Total insulin tracking** Verify total_insulin_delivered increments when insulin is delivered. 
+**Total insulin tracking** - Verify total_insulin_delivered increments when insulin is delivered. 
 
-**Multiple sequential events** Simulate sequence: `meal → exercise → insulin → maintain` to confirm correct state transitions. 
+**Multiple sequential events** - Simulate sequence: `meal → exercise → insulin → maintain` to confirm correct state transitions. 
 
-**Invalid input handling** Ensure ValueError is raised for invalid inputs (e.g., negative carbs or negative exercise duration). 
+**Invalid input handling** - Ensure ValueError is raised for invalid inputs (e.g., negative carbs or negative exercise duration). 
 
 ---
 
