@@ -42,14 +42,16 @@ This project uses **pytest** to verify system behavior across multiple physiolog
 
 | Test | Description |
 |------|--------------|
-| **Glucose increases after a meal** | Feed the system a meal and verify if the glucose_level rises. 
-| **Glucose decreases after exercise** | Simulate exercise and ensure glucose_level drops. |
+**Glucose increases after a meal**  Feed the system a meal and verify if the glucose_level rises. 
+ **Glucose decreases after exercise**  Simulate exercise and ensure glucose_level drops. |
 | **Correct action is returned** | 
 - High glucose → "deliver_insulin"
 - Low glucose → "warn_low_glucose"
-- Normal range → "maintain" 
+- Normal range → "maintain"  
+
 
 **Glucose never drops below minimum** After long exercise, ensure glucose_level is not below 50 mg/dL 
+
 
 **Total insulin tracking** Verify total_insulin_delivered increments when insulin is delivered. 
 
