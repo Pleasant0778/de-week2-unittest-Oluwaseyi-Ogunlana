@@ -5,7 +5,9 @@ class ArtificialPancreasSystem:
     GLUCOSE_PER_CARB = 0.5      # fixed increase per carb unit
     GLUCOSE_BURN_PER_MIN = 0.3  # fixed decrease per minute of exercise
     GLUCOSE_THRESH = 50  # fixed glucose threshold
+    
 
+    #constructor method
     def __init__(self, glucose_level, insulin_sensitivity=1.0, target_glucose=100, tolerance=10):
         self._glucose_level = glucose_level
         self.insulin_sensitivity = insulin_sensitivity
@@ -22,7 +24,9 @@ class ArtificialPancreasSystem:
     @property
     def total_insulin_delivered(self):
       return self._total_insulin_delivered
+ 
 
+    #meal method 
     def meal(self, carbs: float):
         """Simulate a meal event (input feature: carbs)."""
         if carbs > 0:
@@ -31,7 +35,7 @@ class ArtificialPancreasSystem:
             return self._glucose_level
         else:
             print("Enter a valid value for carbs!!! Carb cannot be negative!!!")
-
+    #exercise method
     def exercise(self, duration: float):
         """Simulate physical activity (input feature: duration)."""
         if not isinstance(duration, int):
@@ -50,7 +54,9 @@ class ArtificialPancreasSystem:
             else:
                 raise ValueError("Duration should be a positive number")
                 print("Enter a valid value for duration!!! uration of an exercise cannot be negative!!!")
+ 
 
+    #predict_action method
     def predict_action(self):
         """
         Predict and apply an appropriate system action.
